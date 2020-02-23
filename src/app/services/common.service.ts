@@ -38,11 +38,15 @@ export class CommonService {
 
   // Version --------------------------------------------------------------------------------------------------------
   async getAppName() {
-    this.appName = await this.appVersion.getAppName();
+    if (this.platform.is("cordova")) {
+      this.appName = await this.appVersion.getAppName();
+    }
   }
 
   async getVersionNumber() {
-    this.version = await this.appVersion.getVersionNumber();
+    if (this.platform.is("cordova")) {
+      this.version = await this.appVersion.getVersionNumber();
+    }
   }
 
   async showVersion() {
