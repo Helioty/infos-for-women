@@ -16,7 +16,8 @@ import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { Network } from "@ionic-native/network/ngx";
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HideKeyboardModule } from 'hide-keyboard';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +36,7 @@ console.log(environment);
     IonicModule.forRoot(),
     AppRoutingModule,
     HideKeyboardModule,
+    FormsModule,
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
