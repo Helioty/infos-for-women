@@ -14,6 +14,16 @@ const routes: Routes = [
     loadChildren: './page/inicio/inicio.module#InicioPageModule'
   },
   {
+    path: 'direitos-repro',
+    loadChildren: './page/direitos-repro/direitos-repro.module#DireitosReproPageModule'
+  },
+  {
+    path: 'metodos-anti',
+    loadChildren: './page/metodos-anti/metodos-anti.module#MetodosAntiPageModule'
+  },
+
+
+  {
     path: 'login',
     loadChildren: './page/login/login.module#LoginPageModule'
   },
@@ -64,6 +74,7 @@ const routes: Routes = [
     path: 'lista-tintas',
     loadChildren: './page/tinta-alterada/lista-tintas/lista-tintas.module#ListaTintasPageModule'
   },
+
 
 
 ];

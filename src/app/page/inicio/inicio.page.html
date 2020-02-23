@@ -9,23 +9,39 @@
     <ion-row>
       <ion-col size="12">
         <ion-row>
+          <ion-button fill="clear" color="danger" style="height: auto; font-size: 50px;">
+            <ion-icon slot="icon-only" src="../../../assets/woman/avatar.svg"></ion-icon>
+          </ion-button>
+        </ion-row>
+
+        <ion-row>
           <ion-col size="12">
-            <ion-card>
+            <ion-card button [routerLink]="['/direitos-repro']" routerDirection="forward">
               <ion-card-content>
-                <ion-text>OPÇÃO XX</ion-text>
+                <ion-text>DIREITOS REPRODUTIVOS</ion-text>
               </ion-card-content>
             </ion-card>
           </ion-col>
 
           <ion-col size="12">
-            <ion-card>
+            <ion-card button [routerLink]="['/metodos-anti']" routerDirection="forward">
               <ion-card-content>
-                <ion-text>OPÇÃO ABC</ion-text>
+                <ion-text>METODOS ANTICONTRACEPTIVOS</ion-text>
               </ion-card-content>
             </ion-card>
           </ion-col>
+        </ion-row>
+
+        <ion-row style="width: fit-content; margin: auto;">
+          <ion-button color="blue" fill="clear" href="">Saiba mais em ....</ion-button>
         </ion-row>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar color="primary">
+
+  </ion-toolbar>
+</ion-footer> -->

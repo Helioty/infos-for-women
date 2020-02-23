@@ -5,7 +5,9 @@ ion-content {
         height: 100% !important;
 
         ion-row {
+            width: fit-content !important;
             height: 100% !important;
+            margin: auto !important;
 
             ion-col {
                 margin: auto !important;

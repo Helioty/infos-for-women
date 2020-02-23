@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AppConfig {
 
-    private darkMode: boolean;
-    private fullScreen: boolean;
+    private darkMode: boolean = false;
+    private fullScreen: boolean = false;
 
     constructor() {
 
@@ -20,12 +20,20 @@ export class AppConfig {
 
     }
 
-    getMode(): boolean {
+    public getMode(): boolean {
         return this.darkMode;
     }
 
-    setMode(estado: boolean) {
+    public setMode(estado: boolean) {
         this.darkMode = estado;
+    }
+
+    public getfullScreen(): boolean {
+        return this.fullScreen;
+    }
+
+    public setfullScreen(estado: boolean) {
+        this.fullScreen = estado;
     }
 
 }

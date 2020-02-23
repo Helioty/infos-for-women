@@ -72,7 +72,7 @@ export class AppComponent {
       // this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.statusBar.backgroundColorByHexString('#C40318');
-      this.menu.enable(false);
+      // this.menu.enable(false);
     });
   }
 
