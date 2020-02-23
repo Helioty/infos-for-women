@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Platform, MenuController, NavController } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { CommonService } from './services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +16,9 @@ export class AppComponent {
   private fullScreen: boolean = false;
 
   constructor(
-    private common: CommonService,
     private menu: MenuController,
     private platform: Platform,
     private nativeStorage: NativeStorage,
-    private navControl: NavController,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
@@ -30,11 +27,10 @@ export class AppComponent {
 
   async initializeApp() {
     await this.platform.ready().then(() => {
-      // this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.statusBar.backgroundColorByHexString('#C40318');
-
       if (this.platform.is("cordova")) {
+        this.splashScreen.hide();
+        this.statusBar.backgroundColorByHexString('#C40318');
+
         if (this.nativeStorage.getItem('dados')) {
           this.nativeStorage.getItem('dados').then(
             data => {
@@ -56,21 +52,7 @@ export class AppComponent {
     });
   }
 
-  buttonAction(page: any) {
-    switch (page.title) {
-      case ("Logout"): {
-
-      } break;
-
-      default: {
-        console.log("default of button Action!");
-        this.navControl.navigateRoot([page.url]);
-      }
-    }
-  }
-
   async mudarModo() {
-    console.log(this.darkMode);
     if (this.platform.is("cordova")) {
       this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen })
         .then(() => {

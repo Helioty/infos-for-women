@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AlertController, LoadingController, ToastController, Platform } from '@ionic/angular';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { AppComponent } from './../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +10,25 @@ export class CommonService {
 
   public loading: any;
 
+  public appName: string = '';
+  public version: string = '';
+
   constructor(
-    private appComponent: AppComponent,
     private androidFullScreen: AndroidFullScreen,
     private appVersion: AppVersion,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private platform: Platform
-  ) { }
+  ) {
+    this.getAppName();
+    this.getVersionNumber();
+  }
 
 
   // Funções comuns --------------------------------------------------------------------------------------------------
   public goToFullScreen() {
-    if (this.platform.is("cordova") && this.appComponent.exportFullScreen()) {
+    if (this.platform.is("cordova")) {
       this.androidFullScreen.isImmersiveModeSupported()
         .then(() => this.androidFullScreen.immersiveMode())
         .catch(err => console.log(err));
@@ -34,19 +38,17 @@ export class CommonService {
 
   // Version --------------------------------------------------------------------------------------------------------
   async getAppName() {
-    let appName = this.appVersion.getAppName()
-    return appName;
+    this.appName = await this.appVersion.getAppName();
   }
 
   async getVersionNumber() {
-    let versionNumber: string = await this.appVersion.getVersionNumber();
-    return versionNumber.toString();
+    this.version = await this.appVersion.getVersionNumber();
   }
 
-  async getVersionCode() {
-    let versionCode = await this.appVersion.getVersionCode();
-    let vCode = versionCode.toString();
-    return vCode.replace(/^(\d{1})(\d)/, '$1.$2');
+  async showVersion() {
+    if (this.platform.is("cordova")) {
+      this.showAlert(this.appName, this.version);
+    }
   }
 
 

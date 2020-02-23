@@ -12,9 +12,7 @@ import { DataService } from './services/data.service';
 import { BaseService } from './services/base-service.service';
 import { AppConfig } from 'src/app/config/app.config';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
-import { Network } from "@ionic-native/network/ngx";
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { HideKeyboardModule } from 'hide-keyboard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
@@ -34,7 +32,6 @@ console.log(environment);
     HttpClientModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HideKeyboardModule,
     FormsModule,
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -49,7 +46,6 @@ console.log(environment);
     CommonService,
     BaseService,
     NativeStorage,
-    Network,
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
