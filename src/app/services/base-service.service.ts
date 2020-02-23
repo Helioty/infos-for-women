@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class BaseService {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   get(link: string): Promise<any> {
     return new Promise((resolve, reject) => {
