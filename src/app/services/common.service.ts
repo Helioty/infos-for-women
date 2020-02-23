@@ -24,7 +24,7 @@ export class CommonService {
 
   // Funções comuns --------------------------------------------------------------------------------------------------
   public goToFullScreen() {
-    if (this.platform.is("cordova") && this.appConfig.getMode()) {
+    if (this.platform.is("cordova") && this.appConfig.getfullScreen()) {
       this.androidFullScreen.isImmersiveModeSupported()
         .then(() => this.androidFullScreen.immersiveMode())
         .catch(err => console.log(err));
