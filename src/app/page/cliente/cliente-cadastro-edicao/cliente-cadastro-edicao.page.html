@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar color="fc">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{ cliente }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar color="success" *ngIf="loading" type="indeterminate"></ion-progress-bar>
+  <ion-progress-bar color="success" *ngIf="!loading"></ion-progress-bar>
+  <ion-slides>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <form [formGroup]="formCliente">
+              <ion-row>
+                <ion-col size="12">
+                  <ion-item>
+                    <ion-label position="stacked">Nome Completo</ion-label>
+                    <ion-input formControlName="nome" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-item>
+                    <ion-label position="stacked">E-mail</ion-label>
+                    <ion-input formControlName="email" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Celular</ion-label>
+                    <ion-input formControlName="celular" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Telefone</ion-label>
+                    <ion-input formControlName="telefone" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <form [formGroup]="formEndereco">
+              <ion-row>
+                <ion-col size="8">
+                  <ion-item class="cep-item">
+                    <ion-label position="stacked">CEP</ion-label>
+                    <ion-input formControlName="cep" type="text"></ion-input>
+                    <ion-button slot="end" color="fc-button-green">
+                      <ion-icon name="search"></ion-icon>
+                    </ion-button>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-item>
+                    <ion-label position="stacked">UF</ion-label>
+                    <ion-input formControlName="uf" type="text" maxlength="2"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Cidade</ion-label>
+                    <ion-input formControlName="cidade" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Bairro</ion-label>
+                    <ion-input formControlName="bairro" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Rua ou Avenida</ion-label>
+                    <ion-input formControlName="endereco" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Número</ion-label>
+                    <ion-input formControlName="numero" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-lg="6">
+                  <ion-item>
+                    <ion-label position="stacked">Complemento (opcional)</ion-label>
+                    <ion-input formControlName="comple" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-slides #slidesFooter>
+    <ion-slide>
+      <ion-item button lines="none" color="fc-button-green" (click)="mudaSlide(1)">
+        <ion-text>SEGUIR PARA ENDEREÇO</ion-text>
+        <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+      </ion-item>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-item button lines="none" color="fc-button-green" (click)="mudaSlide(0)">
+        <ion-text>FINALIZAR CADASTRO</ion-text>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+</ion-footer>

@@ -1,0 +1,177 @@
+
+ion-header {
+    .icon-size {
+        font-size: 38px;
+    }
+    @media only screen and (min-width: 600px) {
+        .icon-size {
+            font-size: 64px;
+        }
+    }
+
+    .badge-position {
+        margin-left: 50px; 
+        margin-bottom: 5px; 
+        margin-top: -25px;
+        display: none;
+    }
+}
+
+
+.slide-grid {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 1000px;
+    overflow-y: scroll !important;
+}
+// Esconde a barra de rolagem do grid
+.slide-grid::-webkit-scrollbar { 
+    width: 0 !important;
+    // Outras opcões caso haja algum problema com o scroll
+    // -ms-overflow-style: none;
+    // overflow: -moz-scrollbars-none;
+}
+
+.item-cor {
+    width: fit-content;
+    min-width: 300px !important; 
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 1px 2px 5px 0  rgba(0, 0, 0, 0.4);
+    margin: auto;
+    height: 100% !important;
+    min-height: 60px !important;
+
+    --padding-start: 0 !important;
+    --inner-padding-end: 10px !important;
+
+    ion-grid {
+        width: 100% !important;
+        height: 100% !important;
+
+        ion-row {
+
+            ion-col {
+                .div-cor {
+                    // width: func(height + 'px') !important;
+                    height: 100% !important;
+                    border-radius: 5px;
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    ion-button {
+        margin-left: 2px !important;
+        margin-right: -5px !important;
+        height: 90% !important;
+        ion-icon {
+            font-size: 32px !important;
+        }
+    }
+}
+
+.search {
+    border-radius: 6px !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 1px 2px 5px 0  rgba(0, 0, 0, 0.4) !important;
+    margin-bottom: 10px;
+}
+
+
+.tinta-em-foco {
+    width: 95% !important;
+    max-width: 500px !important;
+    margin: 7px auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 1px 2px 5px 0  rgba(0, 0, 0, 0.4);
+    min-height: 50px !important;
+    --padding-start: 0 !important;
+    --inner-padding-end: 10px !important;
+
+    ion-button {
+        margin-left: 2px !important;
+        margin-right: -5px !important;
+        height: 90% !important;
+        ion-icon {
+            font-size: 36px !important;
+        }
+    }
+}
+
+
+.hide {
+    display: none !important;
+}
+
+
+ion-footer {
+    background: whitesmoke;
+    border-top: 1px solid rgb(200,200,200);
+
+    ion-toolbar {
+        --min-height: 50px;
+        --background: whitesmoke;
+
+        max-width: 1000px !important;
+        margin: auto !important;
+
+        ion-item {
+            --padding-start: 0 !important;
+            --inner-padding-end: 7px !important;
+
+            ion-buttons {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                height: 90% !important;
+                ion-icon {
+                    font-size: 32px !important;
+                }
+            }
+        }
+    }
+
+    ion-grid {
+        ion-row {
+            max-width: 1000px;
+            margin: auto;
+
+            ion-item {
+                min-width: 300px !important; 
+                max-width: 300px !important; 
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 6px;
+                box-shadow: 1px 2px 5px 0  rgba(0, 0, 0, 0.4);
+                margin-bottom: 10px !important;
+                min-height: 50px !important;
+
+                --padding-start: 0 !important;
+                --inner-padding-end: 10px !important;
+            }
+        }
+
+        ion-button {
+            margin-left: 2px !important;
+            margin-right: -5px !important;
+            height: 90% !important;
+            ion-icon {
+                font-size: 32px !important;
+            }
+        }
+    }
+}
+
+ion-footer::-webkit-scrollbar { 
+    width: 0 !important;
+    // Outras opcões caso haja algum problema com o scroll
+    // -ms-overflow-style: none;
+    // overflow: -moz-scrollbars-none;
+}
+
+.footer-margin-top {
+    height: 100%;
+    max-height: 350px !important;
+    overflow-y: scroll !important;
+}
