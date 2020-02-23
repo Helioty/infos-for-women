@@ -10,7 +10,6 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { BaseService } from './services/base-service.service';
-import { AuthService } from './services/auth.service';
 import { AppConfig } from 'src/app/config/app.config';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { Network } from "@ionic-native/network/ngx";
@@ -44,12 +43,12 @@ console.log(environment);
     AndroidFullScreen,
     AppConfig,
     AppVersion,
-    AuthService,
     DataService,
     StatusBar,
     SplashScreen,
     CommonService,
     BaseService,
+    NativeStorage,
     Network,
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

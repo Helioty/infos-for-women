@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AlertController, LoadingController, ToastController, Platform } from '@ionic/angular';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { AppConfig } from '../config/app.config';
+import { AppComponent } from './../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class CommonService {
   public loading: any;
 
   constructor(
-    private appConfig: AppConfig,
+    private appComponent: AppComponent,
     private androidFullScreen: AndroidFullScreen,
     private appVersion: AppVersion,
     private toastCtrl: ToastController,
@@ -24,7 +24,7 @@ export class CommonService {
 
   // Funções comuns --------------------------------------------------------------------------------------------------
   public goToFullScreen() {
-    if (this.platform.is("cordova") && this.appConfig.getfullScreen()) {
+    if (this.platform.is("cordova") && this.appComponent.exportFullScreen()) {
       this.androidFullScreen.isImmersiveModeSupported()
         .then(() => this.androidFullScreen.immersiveMode())
         .catch(err => console.log(err));

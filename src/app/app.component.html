@@ -1,4 +1,4 @@
-<ion-app [class.dark-theme]="modoDark">
+<ion-app [class.dark-theme]="darkMode">
   <ion-split-pane contentId="main-content" when="false">
     <ion-menu contentId="main-content" type="overlay">
       <ion-header>
@@ -21,12 +21,12 @@
       <ion-content>
         <ion-list lines="none">
           <ion-menu-toggle auto-hide="false">
-            <ion-item button class="menuItem">
-              <ion-icon slot="start" name="person"></ion-icon>
+            <ion-item class="menuItem">
+              <ion-icon slot="start" name="moon"></ion-icon>
               <ion-label>
                 Modo Escuro
               </ion-label>
-              <ion-toggle slot="end" [(ngModel)]="modoDark" (ionChange)="mudarModo()"></ion-toggle>
+              <ion-toggle slot="end" [(ngModel)]="darkMode" (ionChange)="mudarModo()"></ion-toggle>
             </ion-item>
 
             <ion-item button class="menuItem" (click)="buttonAction(p)">

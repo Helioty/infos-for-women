@@ -22,8 +22,11 @@ const routes: Routes = [
   {
     path: 'metodo-detalhe',
     loadChildren: './page/metodos-anti/metodo-detalhe/metodo-detalhe.module#MetodoDetalhePageModule'
+  },
+  {
+    path: 'sobre',
+    loadChildren: './page/sobre/sobre.module#SobrePageModule'
   }
-
 ];
 
 @NgModule({
