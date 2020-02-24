@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button [color]="app.darkMode? 'light' : 'dark'"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Sobre</ion-title>
+    <ion-title [color]="app.darkMode? 'light' : 'dark'">Sobre</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,8 +12,8 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <ion-row>
-
+        <ion-row style="width: fit-content !important; height: fit-content !important; margin: auto !important;">
+          <ion-icon [color]="app.darkMode? 'dark' : 'dark'" style="font-size: 130px;" src="../../../assets/sex/sex2.svg"></ion-icon>
         </ion-row>
 
         <ion-row>

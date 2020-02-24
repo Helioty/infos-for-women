@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-sobre',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobrePage implements OnInit {
 
-  constructor() { }
+  constructor(private common: CommonService, public app: AppComponent) { }
 
   ngOnInit() {
+    
   }
 
 }

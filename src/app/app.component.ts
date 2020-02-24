@@ -44,7 +44,6 @@ export class AppComponent {
             this.statusBar.backgroundColorByHexString('#ffbfd3');
             this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen }).then(() => {
               console.log('Stored item!');
-              this.common.showToast("Primeiros dados salvos!");
             },
               error => console.error('Error storing item', error)
             );
