@@ -1,5 +1,19 @@
 ion-content {
     ion-grid {
         height: 100%;
+
+        ion-row {
+
+            ion-col {
+
+                ion-item {
+                    // --inner-padding-end: 0 !important;
+
+                    ion-icon {
+                        margin-right: 10px !important;
+                    }
+                }
+            }
+        }
     }
 }

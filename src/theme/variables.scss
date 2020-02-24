@@ -215,7 +215,7 @@
 ion-header {
   height: auto;
   ion-toolbar {
-    --min-height: 45px !important;
+    --min-height: 50px !important;
   }
 }
 
@@ -361,12 +361,12 @@ ion-header {
  */
 
  .dark-theme {
-  --ion-color-primary: #428cff;
-  --ion-color-primary-rgb: 66,140,255;
+  --ion-color-primary: #E0115f;
+  --ion-color-primary-rgb: 224,17,95;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
-  --ion-color-primary-shade: #3a7be0;
-  --ion-color-primary-tint: #5598ff;
+  --ion-color-primary-shade: #c50f54;
+  --ion-color-primary-tint: #e3296f;
 
   --ion-color-secondary: #50c8ff;
   --ion-color-secondary-rgb: 80,200,255;

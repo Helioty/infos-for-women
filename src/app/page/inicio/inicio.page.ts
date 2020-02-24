@@ -1,3 +1,4 @@
+import { AppComponent } from './../../app.component';
 import { CommonService } from 'src/app/services/common.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor(private common: CommonService) { }
+  constructor(private common: CommonService, public app: AppComponent) { }
 
   ngOnInit() {
 

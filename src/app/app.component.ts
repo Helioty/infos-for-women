@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Platform} from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 export class AppComponent {
 
-  private darkMode: boolean = false;
-  private fullScreen: boolean = false;
+  public darkMode: boolean = false;
+  public fullScreen: boolean = false;
 
   constructor(
+    private common: CommonService,
     private platform: Platform,
     private nativeStorage: NativeStorage,
     private splashScreen: SplashScreen,
@@ -30,25 +32,24 @@ export class AppComponent {
         this.splashScreen.hide();
 
         if (this.nativeStorage.getItem('dados')) {
-          this.nativeStorage.getItem('dados').then(
-            data => {
-              this.darkMode = data.modo;
-              if (this.darkMode) {
-                this.statusBar.backgroundColorByHexString('#C40318');
-              } else {
-                this.statusBar.backgroundColorByHexString('#ffbfd3');
-              }
-            },
-            error => console.error(error)
-          );
-        } else {
-          this.statusBar.backgroundColorByHexString('#ffbfd3');
-          this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen })
-            .then(() => {
+          this.nativeStorage.getItem('dados').then(data => {
+            this.darkMode = data.modo;
+            if (this.darkMode) {
+              this.statusBar.backgroundColorByHexString('#E0115f');
+            } else {
+              this.statusBar.backgroundColorByHexString('#ffbfd3');
+            }
+          }, (error: any) => {
+            console.log(error);
+            this.statusBar.backgroundColorByHexString('#ffbfd3');
+            this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen }).then(() => {
               console.log('Stored item!');
+              this.common.showToast("Primeiros dados salvos!");
             },
               error => console.error('Error storing item', error)
             );
+          }
+          );
         }
       }
     });
@@ -60,7 +61,7 @@ export class AppComponent {
         .then(() => {
           console.log('Stored item!');
           if (this.darkMode) {
-            this.statusBar.backgroundColorByHexString('#C40318');
+            this.statusBar.backgroundColorByHexString('#E0115f');
           } else {
             this.statusBar.backgroundColorByHexString('#ffbfd3');
           }

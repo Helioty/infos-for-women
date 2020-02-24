@@ -9,7 +9,7 @@
     <ion-row>
       <ion-col size="12">
         <ion-row (click)="showVersion()">
-          <ion-icon color="danger" style="font-size: 100px;" src="../../../assets/woman/avatar.svg"></ion-icon>
+          <ion-icon [color]="app.darkMode? 'dark' : 'danger'" style="font-size: 100px;" src="../../../assets/woman/avatar.svg"></ion-icon>
         </ion-row>
 
         <ion-row>
