@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
-  selector: 'app-direitos-repro',
-  templateUrl: './direitos-repro.page.html',
-  styleUrls: ['./direitos-repro.page.scss'],
+  selector: 'app-lgbt',
+  templateUrl: './lgbt.page.html',
+  styleUrls: ['./lgbt.page.scss'],
 })
-export class DireitosReproPage implements OnInit {
+export class LGBTPage implements OnInit {
 
   constructor(
     public app: AppComponent

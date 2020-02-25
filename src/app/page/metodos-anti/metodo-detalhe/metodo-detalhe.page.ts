@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MetodoAnti, ResumoMetodoAnti } from 'src/app/class/metodo-anti';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-metodo-detalhe',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetodoDetalhePage implements OnInit {
 
-  constructor() { }
+  public metodoEscolhido: ResumoMetodoAnti;
+  public metodoName: string = '';
 
-  ngOnInit() {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    public app: AppComponent
+  ) { }
+
+  async ngOnInit() {
+    await this.getDados().then((result: ResumoMetodoAnti) => {
+      this.metodoEscolhido = result;
+      this.metodoName = this.metodoEscolhido.name;
+      console.log(this.metodoEscolhido);
+    });
+  }
+
+  getDados(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.activatedRoute.queryParams.subscribe(params => {
+        resolve(JSON.parse(params['dados']));
+      }, (error) => {
+        reject(error);
+      });
+    });
   }
 
 }

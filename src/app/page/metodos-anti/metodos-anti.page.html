@@ -1,13 +1,51 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button [color]="app.darkMode? 'light' : 'dark'"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>metodos-anti</ion-title>
+    <!-- <ion-title>metodos-anti</ion-title> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-row>
+          <ion-col size="12">
+            <ion-text style="margin: 7px; font-size: 20px; font-weight: bold;">Temporarios</ion-text>
+          </ion-col>
+          <ion-col size="12" *ngFor="let item of metodos; let i of index" class="ion-no-padding">
+            <ion-card button (click)="mostrarMetodo(item)" *ngIf="(item.tipo == 'T')" detail>
+              <ion-card-header>
+                <ion-card-title>{{ item.name }}</ion-card-title>
+              </ion-card-header>
 
+              <ion-card-content>
+                {{ item.resu }}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-text style="margin: 7px; font-size: 20px; font-weight: bold;">Definitivos</ion-text>
+          </ion-col>
+          <ion-col size="12" *ngFor="let item of metodos; let i of index" class="ion-no-padding">
+            <ion-card button (click)="mostrarMetodo(item)" *ngIf="(item.tipo == 'D')" detail>
+              <ion-card-header>
+                <ion-card-title>{{ item.name }}</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content>
+                {{ item.resu }}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
