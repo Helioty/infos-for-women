@@ -1,0 +1,14 @@
+
+ion-content {
+    ion-slides {
+        min-height: 100% !important;
+
+        ion-slide {
+            min-height: 100% !important;
+
+            p {
+                margin-block-end: 0 !important;
+            }
+        }
+    }
+}

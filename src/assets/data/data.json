@@ -1,0 +1,39 @@
+{
+    "dados": [
+        {
+            "name": "Hormonais",
+            "resu": "",
+            "tipo": "T"
+        },
+        {
+            "name": "Barreira",
+            "resu": "",
+            "tipo": "T"
+        },
+        {
+            "name": "Intrauterinos",
+            "resu": "",
+            "tipo": "T"
+        },
+        {
+            "name": "Naturais",
+            "resu": "",
+            "tipo": "T"
+        },
+        {
+            "name": "Duchas Vaginais",
+            "resu": "",
+            "tipo": "T"
+        },
+        {
+            "name": "Ligadura Tubária",
+            "resu": "Procedimento cirúrgico de obstrução mecânica das tubas uterinas, impedindo que os...",
+            "tipo": "D"
+        },
+        {
+            "name": "Vasectomina",
+            "resu": "Procedimento cirúrgico mais simples, seguro e rápido, no qual obstrui os...",
+            "tipo": "D"
+        }
+    ]
+}

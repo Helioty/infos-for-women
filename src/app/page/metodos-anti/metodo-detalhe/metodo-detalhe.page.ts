@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MetodoAnti, ResumoMetodoAnti } from 'src/app/class/metodo-anti';
+import { MetodoAnti } from 'src/app/class/metodo-anti';
 import { AppComponent } from 'src/app/app.component';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-metodo-detalhe',
@@ -10,7 +11,9 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class MetodoDetalhePage implements OnInit {
 
-  public metodoEscolhido: ResumoMetodoAnti;
+  @ViewChild(IonSlides, { static: true }) slide: IonSlides;
+
+  public metodoEscolhido: MetodoAnti;
   public metodoName: string = '';
 
   constructor(
@@ -19,9 +22,13 @@ export class MetodoDetalhePage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    await this.getDados().then((result: ResumoMetodoAnti) => {
+    this.slide.lockSwipes(true);
+    await this.getDados().then((result: MetodoAnti) => {
       this.metodoEscolhido = result;
       this.metodoName = this.metodoEscolhido.name;
+      if (this.metodoEscolhido.tipo == "D") {
+        this.changeSlide(1);
+      }
       console.log(this.metodoEscolhido);
     });
   }
@@ -36,4 +43,10 @@ export class MetodoDetalhePage implements OnInit {
     });
   }
 
+  changeSlide(index: number) {
+    this.slide.lockSwipes(false);
+    this.slide.slideTo(index);
+    this.slide.lockSwipes(true);
+  }
+  
 }

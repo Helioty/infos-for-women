@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/services/common.service';
 import { AppComponent } from 'src/app/app.component';
-import { ResumoMetodoAnti } from 'src/app/class/metodo-anti';
+import { MetodoAnti } from 'src/app/class/metodo-anti';
 import { NavController } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 
@@ -12,26 +12,20 @@ import { NavigationExtras } from '@angular/router';
 })
 export class MetodosAntiPage implements OnInit {
 
-  public metodos: ResumoMetodoAnti[] = [
-    { name: 'Hormonais', resu: '', tipo: 'T' },
-    { name: 'Barreira', resu: '', tipo: 'T' },
-    { name: 'Intrauterinos', resu: '', tipo: 'T' },
-    { name: 'Naturais', resu: '', tipo: 'T' },
-    { name: 'Duchas Vaginais', resu: '', tipo: 'T' },
-    { name: 'Ligadura Tubária', resu: '', tipo: 'D' },
-    { name: 'Vasectomina', resu: '', tipo: 'D' }
-  ];
+  public metodos: MetodoAnti[];
 
   constructor(
-    private common: CommonService,
     private navControl: NavController,
+    private http: HttpClient,
     public app: AppComponent) { }
 
-  ngOnInit() {
-
+  async ngOnInit() {
+    this.http.get('assets/data/data.json').subscribe((result: JSON) => {
+      this.metodos = result["dados"];
+    });
   }
 
-  async mostrarMetodo(metodo: ResumoMetodoAnti) {
+  async mostrarMetodo(metodo: MetodoAnti) {
     let navigationExtras: NavigationExtras = {
       queryParams: {
         dados: JSON.stringify(metodo)
