@@ -20,10 +20,7 @@ export class CommonService {
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private platform: Platform
-  ) {
-    this.getAppName();
-    this.getVersionNumber();
-  }
+  ) { }
 
 
   // Funções comuns --------------------------------------------------------------------------------------------------
@@ -51,7 +48,9 @@ export class CommonService {
 
   async showVersion() {
     if (this.platform.is("cordova")) {
-      this.showAlert(this.appName, this.version);
+      await this.getAppName();
+      await this.getVersionNumber();
+      this.showAlert(this.appName, 'Versão: ' + this.version);
     }
   }
 

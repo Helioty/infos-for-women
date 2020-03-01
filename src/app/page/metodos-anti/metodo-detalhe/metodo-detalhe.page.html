@@ -30,7 +30,7 @@
         </ion-row>
 
         <ion-row>
-          <ion-col size="12">
+          <ion-col size="12" class="ion-padding">
             <p style="text-align: start;">
               Métodos definitivos que podem ser realizados pela mulher (laqueadura) ou pelo homem (vasectomia) para
               evitar a reprodução ou devido a distúrbios hormonais. <br>
@@ -38,9 +38,17 @@
               É importante lembrar que só devem realizar esses procedimentos indivíduos que pretendem não ter mais
               filhos ou por motivos especiais de saúde que seja necessário. <br><br>
               Como funciona? <br>
-              Na mulher: obstrução das tubas uterinas, onde o espermatozoide passa para chegar ao óvulo. <br>
-              No homem: Obstrução dos ductos deferentes, onde os espermatozoides passam para ser ejetado junto com o
-              esperma na cavidade da vagina. <br><br>
+
+              <span *ngIf="metodoEscolhido?.name == 'Ligadura Tubária'">
+                Obstrução das tubas uterinas, onde o espermatozoide passa para chegar ao óvulo.
+                <br><br>
+              </span>
+
+              <span *ngIf="metodoEscolhido?.name == 'Vasectomina'">
+                Obstrução dos ductos deferentes, onde os espermatozoides passam para ser ejetado junto com o
+                esperma na cavidade da vagina. <br><br>
+              </span>
+
               Quem pode fazer?<br>
               Esses procedimentos estão previstos na Lei nº 9.263/96, que trata do planejamento familiar, a qual
               estabelece no seu art. 10 os critérios e as condições obrigatórias para a sua execução. Nele é dito que o
@@ -48,15 +56,24 @@
               realizá-lo e com o consentimento da parceira ou do parceiro. <br><br>
               É seguro?<br>
               São considerados muito eficazes e permanentes, por isso a necessidade de o indivíduo conhecer bem o
-              procedimento. <br><br>
-              Obs.: a realização do método cirúrgico não evita a transmissão de IST’s, por isso é necessário o uso de
-              preservativo.
+              procedimento.
             </p>
           </ion-col>
         </ion-row>
 
-        <ion-row *ngIf="metodoEscolhido?.name == 'Ligadura Tubária'">
+        <ion-row>
           <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                Obs.: a realização do método cirúrgico não evita a transmissão de IST’s, por isso é necessário o uso de
+                preservativo.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="metodoEscolhido?.name == 'Ligadura Tubária'">
+          <ion-col size="12" class="ion-padding">
             <p style="text-align: start;">
               Procedimento cirúrgico de obstrução mecânica das tubas uterinas (local onde os espermatozoides passam para
               chegar no óvulo), impedindo que os espermatozoides cheguem ao óvulo e ocorra a fertilização. Existem
@@ -72,26 +89,37 @@
         </ion-row>
 
         <ion-row *ngIf="metodoEscolhido?.name == 'Vasectomina'">
-          <ion-col size="12">
+          <ion-col size="12" class="ion-padding">
             <p style="text-align: start;">
               Procedimento cirúrgico mais simples, seguro e rápido, no qual obstrui os ductos que levam os
-              espermatozoides
-              à próstata e à vesícula seminal para formar o líquido seminal e ser ejaculado. O procedimento não afeta a
-              vida sexual do homem, apenas o esperma ejaculado que não contém mais espermatozoides, que são capazes de
-              gerar uma gravidez quando se encontra com o óvulo da mulher. <br><br>
-              Diquinha Me: é necessário realizar exames (espermograma) 3 meses após procedimento ou após 20 ejaculações,
-              para ter certeza que o procedimento foi eficaz, por isso é importante um período de “adaptação” antes de
-              ter
-              relações sexuais sem proteção. <br><br>
+              espermatozoides à próstata e à vesícula seminal para formar o líquido seminal e ser ejaculado. O
+              procedimento não afeta a vida sexual do homem, apenas o esperma ejaculado que não contém mais
+              espermatozoides, que são capazes de gerar uma gravidez quando se encontra com o óvulo da mulher. <br><br>
               Efeitos colaterais: podem ser formados hematomas, gerar infecções locais, inflamações ou problemas mais
               crônicos decorrentes de erro técnico.
             </p>
           </ion-col>
         </ion-row>
 
-        <ion-row>
+        <ion-row *ngIf="metodoEscolhido?.name == 'Vasectomina'">
           <ion-col size="12">
-            <p style="text-align: start;">
+            <ion-card>
+              <ion-card-header>
+                Diquinha Me:
+              </ion-card-header>
+
+              <ion-card-content>
+                É necessário realizar exames (espermograma) 3 meses após procedimento ou após 20 ejaculações,
+                para ter certeza que o procedimento foi eficaz, por isso é importante um período de “adaptação” antes de
+                ter relações sexuais sem proteção.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; margin: 0;">
               Para mais informações detalhadas sobre os procedimentos cirúrgicos, acesse o manual de atenção básica de
               saúde sexual reprodutiva, disponibilizado pelo Ministério da Saúde:
             </p>
