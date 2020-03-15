@@ -17,6 +17,12 @@
             <ion-text style="font-size: 25px; font-weight: bold;">{{ metodoName }}</ion-text>
           </ion-col>
         </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            
+          </ion-col>
+        </ion-row>
       </ion-grid>
     </ion-slide>
 
@@ -31,6 +37,10 @@
 
         <ion-row>
           <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              O que é esse método?
+            </p>
+
             <p style="text-align: start;">
               Métodos definitivos que podem ser realizados pela mulher (laqueadura) ou pelo homem (vasectomia) para
               evitar a reprodução ou devido a distúrbios hormonais. <br>
@@ -46,7 +56,8 @@
 
               <span *ngIf="metodoEscolhido?.name == 'Vasectomina'">
                 Obstrução dos ductos deferentes, onde os espermatozoides passam para ser ejetado junto com o
-                esperma na cavidade da vagina. <br><br>
+                esperma na cavidade da vagina.
+                <br><br>
               </span>
 
               Quem pode fazer?<br>
@@ -65,8 +76,18 @@
           <ion-col size="12">
             <ion-card>
               <ion-card-content>
-                Obs.: a realização do método cirúrgico não evita a transmissão de IST’s, por isso é necessário o uso de
-                preservativo.
+                <ion-item lines="none"
+                  style="border-radius: 6px; --inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/alerta.svg"
+                    style="font-size: 32px; margin-right: 10px;"></ion-icon>
+                  <ion-grid>
+                    <ion-row style="font-size: 11px;">
+                      Obs.: a realização do método cirúrgico não evita a transmissão de IST’s, por isso é necessário o
+                      uso de
+                      preservativo.
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
               </ion-card-content>
             </ion-card>
           </ion-col>
@@ -75,29 +96,58 @@
         <ion-row *ngIf="metodoEscolhido?.name == 'Ligadura Tubária'">
           <ion-col size="12" class="ion-padding">
             <p style="text-align: start;">
-              Procedimento cirúrgico de obstrução mecânica das tubas uterinas (local onde os espermatozoides passam para
-              chegar no óvulo), impedindo que os espermatozoides cheguem ao óvulo e ocorra a fertilização. Existem
-              várias técnicas que podem ser utilizadas, com a mesma finalidade, como anéis, grampos, eletrocoagulação,
-              entre outros. Não pode ser realizado em período menstrual, de gravidez, pós-parto ou próximo a período de
-              aborto. <br><br>
-              Efeitos colaterais: infecções, sangramentos no local ou na região abdominal, reação alérgica ao
-              anestésico, lesões de órgãos próximos. Obs.: é importante que a mulher procure o aconselhamento adequado,
-              realizado por profissionais de saúde, antes da tomada de decisão para receber informações e melhores
-              orientações.
+              ⦁ Procedimento cirúrgico de obstrução mecânica das tubas uterinas (local onde os espermatozoides passam
+              para chegar ao óvulo), impedindo que os espermatozoides cheguem ao óvulo e ocorra a fertilização;
+              <br><br>
+              ⦁ Existem várias técnicas que podem ser utilizadas, com a mesma finalidade, como anéis, grampos,
+              eletrocoagulação, entre outros;
+              <br><br>
+              ⦁ Não pode ser realizado em período menstrual, de gravidez, pós-parto ou próximo a período de aborto;
+              <br><br>
+              ⦁ Efeitos colaterais: infecções, sangramentos no local ou na região abdominal, reação alérgica ao
+              anestésico, lesões de órgãos próximos.
             </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <img src="assets/liga.png" style="border-radius: 6px; overflow: hidden; border: 1px solid black;">
           </ion-col>
         </ion-row>
 
         <ion-row *ngIf="metodoEscolhido?.name == 'Vasectomina'">
           <ion-col size="12" class="ion-padding">
             <p style="text-align: start;">
-              Procedimento cirúrgico mais simples, seguro e rápido, no qual obstrui os ductos que levam os
-              espermatozoides à próstata e à vesícula seminal para formar o líquido seminal e ser ejaculado. O
-              procedimento não afeta a vida sexual do homem, apenas o esperma ejaculado que não contém mais
-              espermatozoides, que são capazes de gerar uma gravidez quando se encontra com o óvulo da mulher. <br><br>
-              Efeitos colaterais: podem ser formados hematomas, gerar infecções locais, inflamações ou problemas mais
-              crônicos decorrentes de erro técnico.
+              ⦁ Procedimento cirúrgico mais simples, seguro e rápido, no qual obstrui os ductos que levam os
+              espermatozoides à próstata e à vesícula seminal para formar o líquido seminal e ser ejaculado;
+              <br><br>
+              ⦁ O procedimento não afeta a vida sexual do homem, apenas o esperma ejaculado que não contém mais
+              espermatozoides, que são capazes de gerar uma gravidez quando se encontra com o óvulo da mulher;
+              <br><br>
+              ⦁ Efeitos colaterais: podem ser formados hematomas, gerar infecções locais, inflamações ou problemas
+              mais crônicos decorrentes de erro técnico.
             </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <img src="assets/vase.png" style="border-radius: 6px; overflow: hidden;">
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="metodoEscolhido?.name == 'Ligadura Tubária'">
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-header>
+                <ion-item lines="none" style="--inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/ideia.svg"></ion-icon>
+                  Diquinha Me:
+                </ion-item>
+              </ion-card-header>
+
+              <ion-card-content>
+                É importante que a mulher procure o aconselhamento adequado, realizado por profissionais de saúde, antes
+                da tomada de decisão para receber informações e melhores orientações.
+              </ion-card-content>
+            </ion-card>
           </ion-col>
         </ion-row>
 
@@ -105,7 +155,10 @@
           <ion-col size="12">
             <ion-card>
               <ion-card-header>
-                Diquinha Me:
+                <ion-item lines="none" style="--inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/ideia.svg"></ion-icon>
+                  Diquinha Me:
+                </ion-item>
               </ion-card-header>
 
               <ion-card-content>
