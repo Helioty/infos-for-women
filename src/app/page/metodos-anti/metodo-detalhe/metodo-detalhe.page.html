@@ -11,7 +11,7 @@
 <ion-content>
   <ion-slides>
     <ion-slide>
-      <ion-grid>
+      <ion-grid *ngIf="metodoEscolhido?.name == 'Hormonais'">
         <ion-row>
           <ion-col size="12">
             <ion-text style="font-size: 25px; font-weight: bold;">{{ metodoName }}</ion-text>
@@ -19,15 +19,302 @@
         </ion-row>
 
         <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              O que são esses métodos?
+            </p>
+
+            <p style="text-align: start;">
+              São métodos que previnem a gravidez, utilizando formas sintéticas de hormônios femininos: a progesterona e
+              o estrogênio, que podem estar sozinhos ou combinados.
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              Como eles funcionam?
+            </p>
+
+            <p style="text-align: start;">
+              Pode ocorrer de duas formas: impedindo a liberação do óvulo ou engrossando o muco do colo uterino,
+              impedindo o encontro com o espermatozoide.
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              De que forma podem ser utilizados?
+            </p>
+
+            <p style="text-align: start;">
+              Podem vir na forma de pílulas orais, anel vaginal, adesivos, injetáveis, implantes e sistema liberador de
+              levonorgestrel (SIU).
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <img src="assets/Hormo.png" style="border-radius: 6px; overflow: hidden; border: 1px solid black;">
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
           <ion-col size="12">
-            
+            <ion-card>
+              <ion-card-content>
+                <ion-item lines="none"
+                  style="border-radius: 6px; --inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/alerta.svg"
+                    style="font-size: 32px; margin-right: 10px;"></ion-icon>
+                  <ion-grid>
+                    <ion-row style="font-size: 11px;">
+                      O Dispositivo intrauterino também é classificado como método hormonal, mas temos uma tela
+                      exclusiva com informações detalhadas sobre ele.
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              Vantagens x Desvantagens:
+            </p>
+
+            <p style="text-align: start;">
+              Os contraceptivos hormonais podem ajudar na redução do fluxo menstrual e de cólicas. Mas podem trazer
+              efeitos colaterais como dor de cabeça, alterações de humor, acnes, náusea, reduzir o desejo sexual e ganho
+              de peso.
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item lines="none"
+                  style="border-radius: 6px; --inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/ideia.svg"
+                    style="font-size: 32px; margin-right: 10px;"></ion-icon>
+                  <ion-grid>
+                    <ion-row style="font-size: 12px;">
+                      Lembre-se, o profissional de saúde deve orienta-la da melhor maneira, pois, é direito seu ser
+                      assistida e beneficiada por ações de educação em saúde.
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; margin: 0;">
+              Para mais informações sobre os métodos hormonais, acesse o manual de atenção básica de saúde sexual e
+              saúde reprodutiva, disponibilizado pelo Ministério da Saúde:
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <a href="">Saiba mais aqui!</a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-grid *ngIf="metodoEscolhido?.name == 'Barreira'">
+        <ion-row>
+          <ion-col size="12">
+            <ion-text style="font-size: 25px; font-weight: bold;">{{ metodoName }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-grid *ngIf="metodoEscolhido?.name == 'Intrauterinos'">
+        <ion-row>
+          <ion-col size="12">
+            <ion-text style="font-size: 25px; font-weight: bold;">{{ metodoName }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              O que é esse método?
+            </p>
+
+            <p style="text-align: start;">
+              O dispositivo intrauterino – DIU é um objeto pequeno de plástico flexível, em forma de T, que mede
+              aproximadamente 31 mm, que funciona como um contraceptivo ao ser inserido na cavidade uterina.
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-content>
+                <ion-item lines="none"
+                  style="border-radius: 6px; --inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/alerta.svg"
+                    style="font-size: 32px; margin-right: 10px;"></ion-icon>
+                  <ion-grid>
+                    <ion-row style="font-size: 11px;">
+                      A seleção adequada da usuária e a inserção cuidadosa, realizada por profissional capacitado para
+                      tal prática, melhoram a eficácia, a continuidade de uso e a segurança do método, vale pontuar que,
+                      medicados com cobre são seguros e muito eficazes, pois, agem nos espermatozoides e óvulos de
+                      várias maneiras.
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              Como funciona?
+            </p>
+
+            <p style="text-align: start;">
+              Os estudos indicam que o DIU atua impedindo a fecundação porque torna mais difícil a passagem do
+              espermatozoide pelo trato reprodutivo feminino, reduzindo a possibilidade de fertilização do óvulo.
+              <br><br>
+              A duração de uso do DIU difere segundo o modelo:
+              <br><br>
+              <span style="color: pink;">
+                ⦁ O TCu-380 A está aprovado para 10 anos e o MLCu-375 para cinco anos.
+              </span>
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <img src="assets/DIU.png" style="border-radius: 6px; overflow: hidden; border: 1px solid black;">
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              Devo me preocupar?
+            </p>
+
+            <p style="text-align: start;">
+              A inserção do DIU pode ocasionar alguns efeitos secundários, por ser um corpo novo e estranho introduzido
+              no organismo, no entanto, esses efeitos secundários são comuns em 5 a 15% dos casos, e são eles:
+              <br><br>
+              ⦁ Alterações no ciclo menstrual (comum nos primeiros três meses, geralmente diminuindo depois desse
+              período).
+              <br><br>
+              ⦁ Sangramento menstrual prolongado e volumoso;
+              <br><br>
+              ⦁ Sangramento e manchas (spotting) no intervalo entre as menstruações;
+              <br><br>
+              ⦁ Cólicas de maior intensidade ou dor durante a menstruação. Outros efeitos secundários (menos de 5% dos
+              casos).
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; color: pink">
+              Quais direitos às mulheres possuem no atendimento?
+            </p>
+
+            <p style="text-align: start;">
+              ⦁ Conhecimento a respeito do tipo de DIU que está usando e o seu formato. Para compreender a importância
+              das consultas de retorno agendadas afim de acompanhamento do uso e da data de quando deve retornar para
+              remover ou trocar o DIU;
+              <br><br>
+              ⦁ Deve-se fornecer a mulher uma ficha em que estejam registrados os dados sobre a inserção do DIU,
+              incluindo mês e ano, e a data para a remoção. A mulher, ainda, deve ser orientada a informar o uso do DIU
+              sempre que for a qualquer consulta, mesmo que isso não lhe seja perguntado (queixas e dúvidas).
+              <br><br>
+              ⦁ A mulher deve ser orientada a verificar se o DIU está no lugar, pois, ocasionalmente o DIU desloca-se e
+              é expelido sem que a mulher perceba, isso geralmente ocorre no primeiro mês após a inserção ou durante a
+              menstruação.
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-card>
+              <ion-card-header>
+                <ion-item lines="none"
+                  style="border-radius: 6px; --inner-padding-end: 0 !important; --padding-start: 0 !important">
+                  <ion-icon slot="start" src="assets/generic-icons/ideia.svg"
+                    style="font-size: 32px; margin-right: 10px;"></ion-icon>
+                  <ion-grid>
+                    <ion-row style="font-size: 12px;">
+                      Caso sinta algum incomodo, segue algumas orientações:
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
+              </ion-card-header>
+              <ion-card-content>
+                <p style="text-align: start; font-size: 12px;">
+                  ⦁ Lavar as mãos;
+                  <br><br>
+                  ⦁ Ficar de cócoras;
+                  <br><br>
+                  ⦁ Inserir um ou dois dedos na vagina até atingir os fios do DIU. Se achar que o DIU está fora do
+                  lugar, se não encontrar os fios, se eles estiverem mais curtos ou mais compridos, ela deve
+                  procurar o serviço de saúde. Importante: a mulher não deve puxar os fios para não deslocar o DIU;
+                  <br><br>
+                  ⦁ Lavar as mãos novamente;
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+            <p style="text-align: start; margin: 0;">
+              Para mais informações detalhadas sobre os procedimentos cirúrgicos, acesse o manual de atenção básica de
+              saúde sexual reprodutiva, disponibilizado pelo Ministério da Saúde:
+            </p>
+          </ion-col>
+
+          <ion-col size="12" class="ion-padding">
+            <a href="">Saiba mais aqui!</a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-grid *ngIf="metodoEscolhido?.name == 'Naturais'">
+        <ion-row>
+          <ion-col size="12">
+            <ion-text style="font-size: 25px; font-weight: bold;">{{ metodoName }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-padding">
+
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-slide>
 
 
-    <ion-slide class="tipoD">
+    <ion-slide class="tipoD" *ngIf="metodoEscolhido?.tipo === 'D'">
       <ion-grid>
         <ion-row>
           <ion-col size="12">

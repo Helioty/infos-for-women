@@ -20,18 +20,18 @@ export class MetodosAntiPage implements OnInit {
     public app: AppComponent) { }
 
   async ngOnInit() {
-    this.http.get('assets/data/data.json').subscribe((result: JSON) => {
-      this.metodos = result["dados"];
+    this.http.get<JSON>('assets/data/data.json').subscribe((result: any) => {
+      this.metodos = result.dados;
     });
   }
 
   async mostrarMetodo(metodo: MetodoAnti) {
-    let navigationExtras: NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams: {
         dados: JSON.stringify(metodo)
       }
     };
-    this.navControl.navigateForward(["/metodo-detalhe"], navigationExtras);
+    this.navControl.navigateForward(['/metodo-detalhe'], navigationExtras);
   }
 
 }

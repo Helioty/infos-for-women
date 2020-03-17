@@ -13,7 +13,7 @@ export class DireitosReproPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
   }
 
 }

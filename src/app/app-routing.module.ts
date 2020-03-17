@@ -23,9 +23,9 @@ const routes: Routes = [
     path: 'metodo-detalhe',
     loadChildren: './page/metodos-anti/metodo-detalhe/metodo-detalhe.module#MetodoDetalhePageModule'
   },
-  { 
-    path: 'lgbt', 
-    loadChildren: './page/lgbt/lgbt.module#LGBTPageModule' 
+  {
+    path: 'lgbt',
+    loadChildren: './page/lgbt/lgbt.module#LGBTPageModule'
   },
   {
     path: 'sobre',

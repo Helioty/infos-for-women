@@ -14,7 +14,7 @@ export class MetodoDetalhePage implements OnInit {
   @ViewChild(IonSlides, { static: true }) slide: IonSlides;
 
   public metodoEscolhido: MetodoAnti;
-  public metodoName: string = '';
+  public metodoName = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -26,7 +26,7 @@ export class MetodoDetalhePage implements OnInit {
     await this.getDados().then((result: MetodoAnti) => {
       this.metodoEscolhido = result;
       this.metodoName = this.metodoEscolhido.name;
-      if (this.metodoEscolhido.tipo == "D") {
+      if (this.metodoEscolhido.tipo === 'D') {
         this.changeSlide(1);
       }
       console.log(this.metodoEscolhido);
@@ -35,8 +35,8 @@ export class MetodoDetalhePage implements OnInit {
 
   getDados(): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.activatedRoute.queryParams.subscribe(params => {
-        resolve(JSON.parse(params['dados']));
+      this.activatedRoute.queryParams.subscribe((params: any) => {
+        resolve(JSON.parse(params.dados));
       }, (error) => {
         reject(error);
       });
@@ -48,5 +48,5 @@ export class MetodoDetalhePage implements OnInit {
     this.slide.slideTo(index);
     this.slide.lockSwipes(true);
   }
-  
+
 }

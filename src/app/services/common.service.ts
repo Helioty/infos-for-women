@@ -10,8 +10,8 @@ export class CommonService {
 
   public loading: any;
 
-  public appName: string = '';
-  public version: string = '';
+  public appName = '';
+  public version = '';
 
   constructor(
     private androidFullScreen: AndroidFullScreen,
@@ -25,7 +25,7 @@ export class CommonService {
 
   // Funções comuns --------------------------------------------------------------------------------------------------
   public goToFullScreen() {
-    if (this.platform.is("cordova")) {
+    if (this.platform.is('cordova')) {
       this.androidFullScreen.isImmersiveModeSupported()
         .then(() => this.androidFullScreen.immersiveMode())
         .catch(err => console.log(err));
@@ -35,19 +35,19 @@ export class CommonService {
 
   // Version --------------------------------------------------------------------------------------------------------
   async getAppName() {
-    if (this.platform.is("cordova")) {
+    if (this.platform.is('cordova')) {
       this.appName = await this.appVersion.getAppName();
     }
   }
 
   async getVersionNumber() {
-    if (this.platform.is("cordova")) {
+    if (this.platform.is('cordova')) {
       this.version = await this.appVersion.getVersionNumber();
     }
   }
 
   async showVersion() {
-    if (this.platform.is("cordova")) {
+    if (this.platform.is('cordova')) {
       await this.getAppName();
       await this.getVersionNumber();
       this.showAlert(this.appName, 'Versão: ' + this.version);
@@ -74,7 +74,7 @@ export class CommonService {
 
   // Toast's --------------------------------------------------------------------------------------------------------
   async showToast(msg: string) {
-    let toast = await this.toastCtrl.create({
+    const toast = await this.toastCtrl.create({
       message: msg,
       duration: 2000,
       position: 'bottom'
@@ -95,7 +95,7 @@ export class CommonService {
 
   async showAlertInfo(msg: string) {
     const alert = await this.alertCtrl.create({
-      header: "Info",
+      header: 'Info',
       message: msg,
       buttons: ['OK']
     });
@@ -104,7 +104,7 @@ export class CommonService {
 
   async showAlertError(erro: string) {
     const alert = await this.alertCtrl.create({
-      header: "ERRO!",
+      header: 'ERRO!',
       message: erro,
       buttons: ['OK']
     });
@@ -115,12 +115,12 @@ export class CommonService {
   // formatação de string -------------------------------------------------------------------------------------------
   public formataCEP(value: string): string {
     value = value.replace(/\D/g, '');
-    value = value.replace(/^(\d{2})(\d{3})(\d)/, "$1.$2-$3");
+    value = value.replace(/^(\d{2})(\d{3})(\d)/, '$1.$2-$3');
     return value;
   }
 
   public formataCPFNPJ(value: string): string {
-    value = value.replace(/\D/g, ''); //Remove tudo o que não é dígito
+    value = value.replace(/\D/g, ''); // Remove tudo o que não é dígito
 
     if (value.length === 11) {
       value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -133,23 +133,19 @@ export class CommonService {
       value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
       value = value.replace(/(\d{4})(\d)/, '$1-$2');
       return value;
-    }
-    else if (value.length < 11 && value.length > 9) {
+    } else if (value.length < 11 && value.length > 9) {
       value = value.replace(/(\d{3})(\d)/, '$1.$2');
       value = value.replace(/(\d{3})(\d)/, '$1.$2');
       value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
       return value;
-    }
-    else if (value.length > 6 && value.length <= 9) {
+    } else if (value.length > 6 && value.length <= 9) {
       value = value.replace(/(\d{3})(\d)/, '$1.$2');
       value = value.replace(/(\d{3})(\d)/, '$1.$2');
       return value;
-    }
-    else if (value.length > 3 && value.length <= 6) {
+    } else if (value.length > 3 && value.length <= 6) {
       value = value.replace(/^(\d{3})(\d)/, '$1.$2');
       return value;
-    }
-    else {
+    } else {
       return value;
     }
   }
@@ -157,14 +153,11 @@ export class CommonService {
   public formataFONE(value: string): string {
     if (value.length === 11) {
       value = value.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-    }
-    else if (value.length < 11 && value.length > 6) {
+    } else if (value.length < 11 && value.length > 6) {
       value = value.replace(/^(\d{2})(\d{4})/, '($1) $2-');
-    }
-    else if (value.length <= 6 && value.length > 2) {
+    } else if (value.length <= 6 && value.length > 2) {
       value = value.replace(/^(\d{2})/, '($1) ');
-    }
-    else {
+    } else {
       value = value.replace(/^(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
     }
     return value;

@@ -13,7 +13,7 @@ export class LGBTPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
   }
 
 }

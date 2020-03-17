@@ -12,7 +12,7 @@ export class SobrePage implements OnInit {
   constructor(private common: CommonService, public app: AppComponent) { }
 
   ngOnInit() {
-    
+
   }
 
 }

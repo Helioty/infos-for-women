@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class BaseService {
       this.http.post(link, body).subscribe((result: any) => {
         resolve(result);
       }, (error) => {
-        reject(error)
+        reject(error);
       });
     });
   }

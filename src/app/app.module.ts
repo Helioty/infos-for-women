@@ -10,7 +10,6 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DataService } from './services/data.service';
 import { BaseService } from './services/base-service.service';
-import { AppConfig } from 'src/app/config/app.config';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -38,7 +37,6 @@ console.log(environment);
   ],
   providers: [
     AndroidFullScreen,
-    AppConfig,
     AppVersion,
     DataService,
     StatusBar,

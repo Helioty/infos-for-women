@@ -13,8 +13,8 @@ import { CommonService } from 'src/app/services/common.service';
 
 export class AppComponent {
 
-  public darkMode: boolean = false;
-  public fullScreen: boolean = false;
+  public darkMode = false;
+  public fullScreen = false;
 
   constructor(
     private common: CommonService,
@@ -28,7 +28,7 @@ export class AppComponent {
 
   async initializeApp() {
     await this.platform.ready().then(() => {
-      if (this.platform.is("cordova")) {
+      if (this.platform.is('cordova')) {
         this.splashScreen.hide();
 
         if (this.nativeStorage.getItem('dados')) {
@@ -45,7 +45,7 @@ export class AppComponent {
             this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen }).then(() => {
               console.log('Stored item!');
             },
-              error => console.error('Error storing item', error)
+              (error2: any) => { console.error('Error storing item', error2); }
             );
           }
           );
@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
   async mudarModo() {
-    if (this.platform.is("cordova")) {
+    if (this.platform.is('cordova')) {
       this.nativeStorage.setItem('dados', { modo: this.darkMode, fs: this.fullScreen })
         .then(() => {
           console.log('Stored item!');
