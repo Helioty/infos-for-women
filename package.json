@@ -24,6 +24,9 @@
     "@ionic-native/android-full-screen": "^5.17.1",
     "@ionic-native/app-version": "^5.16.0",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/document-viewer": "^5.22.0",
+    "@ionic-native/file": "^5.22.0",
+    "@ionic-native/file-opener": "^5.22.0",
     "@ionic-native/file-transfer": "^5.22.0",
     "@ionic-native/geolocation": "^5.19.1",
     "@ionic-native/keyboard": "^5.21.0",
@@ -38,7 +41,9 @@
     "cordova-android": "^7.1.4",
     "cordova-plugin-app-version": "^0.1.9",
     "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-document-viewer": "^0.9.13",
     "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-file-opener2": "^3.0.0",
     "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-fullscreen": "^1.2.0",
     "cordova-plugin-geolocation": "^4.0.2",
@@ -108,7 +113,12 @@
       "cordova-plugin-fullscreen": {},
       "cordova-plugin-geolocation": {},
       "cordova-plugin-nativestorage": {},
-      "cordova-plugin-file-transfer": {}
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-file-opener2": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-file": {},
+      "cordova-plugin-document-viewer": {}
     },
     "platforms": [
       "android"

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-direitos-repro',
@@ -8,12 +9,8 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class DireitosReproPage implements OnInit {
 
-  constructor(
-    public app: AppComponent
-  ) { }
+  constructor(public app: AppComponent, public data: DataService) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
 }

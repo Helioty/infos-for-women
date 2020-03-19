@@ -1,5 +1,6 @@
 import { AppComponent } from './../../app.component';
 import { CommonService } from 'src/app/services/common.service';
+import { DataService } from 'src/app/services/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor(private common: CommonService, public app: AppComponent) { }
+  constructor(private common: CommonService, public app: AppComponent, public data: DataService) { }
 
   ngOnInit() {
 
@@ -17,6 +18,10 @@ export class InicioPage implements OnInit {
 
   showVersion() {
     this.common.showVersion();
+  }
+
+  download() {
+    this.data.openLocalPDF();
   }
 
 }

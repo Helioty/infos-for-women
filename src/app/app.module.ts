@@ -20,6 +20,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 console.log(environment);
 
 
@@ -45,7 +50,11 @@ console.log(environment);
     BaseService,
     NativeStorage,
     Geolocation,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    File,
+    FileOpener,
+    FileTransfer,
+    DocumentViewer
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MetodoAnti } from 'src/app/class/metodo-anti';
 import { AppComponent } from 'src/app/app.component';
 import { IonSlides } from '@ionic/angular';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-metodo-detalhe',
@@ -18,7 +19,8 @@ export class MetodoDetalhePage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    public app: AppComponent
+    public app: AppComponent,
+    public data: DataService
   ) { }
 
   async ngOnInit() {
